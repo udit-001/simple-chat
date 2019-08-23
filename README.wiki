@@ -1,16 +1,35 @@
 = Simple Chat = 
-A Chat app
+An online messaging platform similar in spirit to Slack made using Flask.
+
+__TOC__
 
 == Features ==
 * '''User Authentication''' : Allows users to sign up on the platform and login later to view older messages.
 * '''Dark Theme/ Light Theme''' : The app also comes in dark theme, for the ones who prefer the dark side.
 * '''Group Conversation''' : Allows multiple people to chat with each other in public channels.
+* '''Channel Creation''' : You can create channels to have conversations about different topics in a well organized manner.
 * '''Private Conversations''' : And for all your personal stuff, we've got private messages so that you can share your secrets without anyone knowing about it.
 * '''File Attachments''' : Sometimes you may need to share important work documents with each other or your cute dog photos.
 * '''Emoji Picker''' : It gets boring with only text, so we also let you express yourself using emojis with built-in emoji picker.
+* '''Typing Indicator''' : So that you can get instant feedback if your friend is typing a message before they finally send it.
 * '''Mobile Friendly''' : You can even talk to your friends on the move on your phone, since the site is mobile friendly.
 
 <br />
+
+== Technical Details ==
+=== Back End ===
+* '''[http://flask.pocoo.org/docs/1.0/ Flask]''' : The app is built using Flask a micro web framework written in Python.
+* '''[https://flask-socketio.readthedocs.io/en/latest/ Flask-SocketIO]''' : It relies on the SocketIO framework to transmit your messages between the users in real-time.
+* '''[https://flask-bcrypt.readthedocs.io/en/latest/ Flask-Bcrypt]''' : Uses flask-bcrypt package to store your passwords securely in the database.
+* '''[https://docs.sqlalchemy.org/en/13/ SQLAlchemy]''' : Provides an interface to interact with database.
+
+=== Front End ===
+* '''[https://fontawesome.com/ FontAwesome] : Beautiful icons for creating user interfaces.
+* '''[https://socket.io/docs/client-api/ Client Side SocketIO]''' :  Allows clients to communicate with the server.
+* '''[https://github.com/mervick/emojionearea Emojionearea]''' : Lets you add emoji picker to your app.
+* '''[https://sweetalert2.github.io/ SweetAlert2]''' : A beautiful, responsive, modern replacement for JavaScript popup boxes.
+* '''[https://momentjs.com/ MomentJs]''' : Parse, validate, manipulate, and display dates and times in JavaScript.
+* '''[https://momentjs.com/timezone/ MomentJs Timezone]''' : Parse and display dates in any timezone.
 <br />
 
 == Design ==
