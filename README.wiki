@@ -1,6 +1,18 @@
 = Simple Chat = 
 A Chat app
 
+== Features ==
+* '''User Authentication''' : Allows users to sign up on the platform and login later to view older messages.
+* '''Dark Theme/ Light Theme''' : The app also comes in dark theme, for the ones who prefer the dark side.
+* '''Group Conversation''' : Allows multiple people to chat with each other in public channels.
+* '''Private Conversations''' : And for all your personal stuff, we've got private messages so that you can share your secrets without anyone knowing about it.
+* '''File Attachments''' : Sometimes you may need to share important work documents with each other or your cute dog photos.
+* '''Emoji Picker''' : It gets boring with only text, so we also let you express yourself using emojis with built-in emoji picker.
+* '''Mobile Friendly''' : You can even talk to your friends on the move on your phone, since the site is mobile friendly.
+
+<br />
+<br />
+
 == Design ==
 
 {|
