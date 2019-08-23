@@ -30,7 +30,7 @@ A Chat app
 !colspan="3"|Exciting Features
 |-
 |[[File:screenshots/chat-screen__sidebar.png|options|Sidebar]]
-|[[File:screenshots/emoji-picker-1.png|options|Emoji Picker]]
+|[[File:screenshots/emoji-picker.png|options|Emoji Picker]]
 |[[File:screenshots/chat-screen__dark-file_attachment.png|options|File Attachments]]
 |-
 |Sidebar
