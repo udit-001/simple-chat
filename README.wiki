@@ -17,11 +17,6 @@ __TOC__
 <br />
 
 == Technical Details ==
-=== Back End ===
-* '''[http://flask.pocoo.org/docs/1.0/ Flask]''' : The app is built using Flask a micro web framework written in Python.
-* '''[https://flask-socketio.readthedocs.io/en/latest/ Flask-SocketIO]''' : It relies on the SocketIO framework to transmit your messages between the users in real-time.
-* '''[https://flask-bcrypt.readthedocs.io/en/latest/ Flask-Bcrypt]''' : Uses flask-bcrypt package to store your passwords securely in the database.
-* '''[https://docs.sqlalchemy.org/en/13/ SQLAlchemy]''' : Provides an interface to interact with database.
 
 === Front End ===
 * '''[https://fontawesome.com/ FontAwesome] : Beautiful icons for creating user interfaces.
@@ -30,6 +25,13 @@ __TOC__
 * '''[https://sweetalert2.github.io/ SweetAlert2]''' : A beautiful, responsive, modern replacement for JavaScript popup boxes.
 * '''[https://momentjs.com/ MomentJs]''' : Parse, validate, manipulate, and display dates and times in JavaScript.
 * '''[https://momentjs.com/timezone/ MomentJs Timezone]''' : Parse and display dates in any timezone.
+
+=== Back End ===
+* '''[http://flask.pocoo.org/docs/1.0/ Flask]''' : The app is built using Flask a micro web framework written in Python.
+* '''[https://flask-socketio.readthedocs.io/en/latest/ Flask-SocketIO]''' : It relies on the SocketIO framework to transmit your messages between the users in real-time.
+* '''[https://flask-bcrypt.readthedocs.io/en/latest/ Flask-Bcrypt]''' : Uses flask-bcrypt package to store your passwords securely in the database.
+* '''[https://docs.sqlalchemy.org/en/13/ SQLAlchemy]''' : Provides an interface to interact with database.
+
 <br />
 
 == Design ==
