@@ -19,7 +19,7 @@ __TOC__
 == Technical Details ==
 
 === Front End ===
-* '''[https://fontawesome.com/ FontAwesome] : Beautiful icons for creating user interfaces.
+* '''[https://fontawesome.com/ FontAwesome]''' : Beautiful icons for creating user interfaces.
 * '''[https://socket.io/docs/client-api/ Client Side SocketIO]''' :  Allows clients to communicate with the server.
 * '''[https://github.com/mervick/emojionearea Emojionearea]''' : Lets you add emoji picker to your app.
 * '''[https://sweetalert2.github.io/ SweetAlert2]''' : A beautiful, responsive, modern replacement for JavaScript popup boxes.
