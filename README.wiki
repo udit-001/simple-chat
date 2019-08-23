@@ -1,1 +1,38 @@
-# simpe-chat
+= Simple Chat = 
+
+== Design ==
+
+{|
+!colspan="2"|Authentication
+|-
+|[[File:screenshots/register-page.png|options|Registeration]]
+|[[File:screenshots/login-page.png|options|Login]]
+|-
+|Register
+|Login
+|}
+
+<br />
+<br />
+
+{|
+!colspan="2"|Themes
+|-
+|[[File:screenshots/chat-screen__light-typing.png|options|Light Theme]]
+|[[File:screenshots/chat-screen__dark-typing.png|options|Dark Theme]]
+|-
+|Light Side
+|Dark Side
+|}
+
+{|
+!colspan="3"|Exciting Features
+|-
+|[[File:screenshots/chat-screen__sidebar.png|options|Sidebar]]
+|[[File:screenshots/emoji-picker.png|options|Emoji Picker]]
+|[[File:screenshots/chat-screen__dark-file_attachment.png|options|File Attachments]]
+|-
+|Sidebar
+|Emoji Picker
+|File Attachments
+|}
