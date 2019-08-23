@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.min.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="flex">
+    <div class="main-div" id="register_div">
+        <h3>
+            Flack : A Simple Chat App
+        </h3>
+        <input type="text" name="text" id="username-field" placeholder="Username" autocomplete="username">
+        <input type="password" name="password" id="password-field" placeholder="Password">
+        <input type="password" name="cpassword" id="cpassword-field" placeholder="Confirm Password"
+            style="display:none;">
+        <button id="login" disabled>Login</button>
+        <p><span id="switch">Do not</span> have an account, <a href="javascript:void(0);" id="toggle-button">Register
+                here</a></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.all.min.js"></script>
+<script src="{{ url_for('static',filename='js/auth.min.js') }}"></script>
+{% endblock %}

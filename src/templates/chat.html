@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+        integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.min.css') }}">
+{% endblock %}
+
+    {% block content %}
+    <div class="container">
+        <div id="sidebar">
+            <div class='app-name'>
+                <h2>
+                    Flack Chat
+                </h2>
+                <i class="fas fa-times fa-lg oc"></i>
+            </div>
+            <div class="accordion">
+                <div class='header'>
+                    <i class="fas fa-angle-down fa-lg"></i>
+                    <h3> Channels <span id='no-of-channels'></span></h3>
+                    <i class="fas fa-plus-circle" id='add-channel'></i>
+                </div>
+                <div class="scrollable">
+                    <ul class="fa-ul" id="channels">
+
+                    </ul>
+                </div>
+                <div class="header">
+                    <i class="fas fa-angle-down fa-lg"></i>
+                    <h3>Direct Messages <span id='no-of-users'></span></h3>
+                </div>
+                <div class="scrollable">
+                    <ul class="fa-ul" id="users">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="full chat-section" id='chat'>
+            <div class="chat-header">
+                <i class="fas fa-bars fa-lg sidebar-toggle oc"></i>
+                <h2 id='currentRoom'></h2>
+                <div class="dropdown-container">
+                    <a href="javascript:void(0)" class="dropdown-toggle js-profile-setting-toggle">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-item--link">
+                                Profile
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <button class="dropdown-item--button" id="theme">
+                                <span class="themeTxt">Dark Theme</span>
+                                <i class="fas fa-adjust" style="padding-left:5px;"></i>
+                            </button>
+                        </li>
+                        <li class="dropdown-item">
+                            <button class="dropdown-item--button" id="sound">
+                                Sounds Off
+                                <i class="fas fa-volume-mute" style="padding-left:5px;"></i>
+                            </button>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="javascript:void(0);" class="dropdown-item--link" id="log-out">
+                                Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="indicator" id="unread" style="text-align:center;display:none;"></div>
+            <div class='messages-wrapper main-content__messages-box'>
+            </div>
+            <div class="indicator" id="typing" style="display:none;"></div>
+            <div class="input">
+                <i class="fas fa-plus gray" id="upload"></i>
+                <input type="text" name="message" placeholder="Type a message" autocomplete="off" autofocus id='ex1'
+                    class="emoCss" data-emoji>
+                <button type='submit' class='submit' id='send'><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div id=ui-dismiss></div>
+        <audio id="new-message" src="{{ url_for('static', filename='sounds/new_message.m4a' )}}" preload="metadata"
+            type="audio/mp3">Your
+            browser does not support the audio element.
+        </audio>
+        <audio id="sent-message" src="{{ url_for('static', filename='sounds/message_sent.m4a' )}}" preload="metadata"
+            type="audio/mp3">Your
+            browser does not support the audio element.
+        </audio>
+        <input type="file" accept="image/*,video/*,audio/*" class="upload" hidden>
+        {% endblock %}
+
+        {% block script %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
+        <script src="{{ url_for('static',filename='js/chat.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.2/sweetalert2.all.min.js"></script>
+        <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Tocca.js/2.0.3/Tocca.min.js"></script>
+        <script>
+            document.querySelector(".js-profile-setting-toggle").onclick = function () {
+                $(".dropdown-menu").toggle();
+            }
+            $("#ex1")[0].emojioneArea.editor.focus();
+            let root = document.documentElement;
+            root.style.setProperty('--perc', "83%");
+            document.querySelector('#sidebar').style.height = window.innerHeight + 'px';
+            window.onbeforeunload = function (e) {
+                return 'Dialog text here. Iffy functionality.';
+            };
+        </script>
+        {% endblock %}
