@@ -1,4 +1,5 @@
 = Simple Chat = 
+A Chat app
 
 == Design ==
 
