@@ -3,6 +3,13 @@ An online messaging platform similar in spirit to Slack made using Flask, availa
 
 __TOC__
 
+== Installation ==
+Install the required dependencies/libraries by running :
+ <nowiki>pip install -r requirements.txt</nowiki>
+
+== Usage == 
+  <nowiki>python application.py</nowiki>
+
 == Features ==
 * '''User Authentication''' : Allows users to sign up on the platform and login later to view older messages.
 * '''Dark Theme/ Light Theme''' : The app also comes in dark theme, for the ones who prefer the dark side.
