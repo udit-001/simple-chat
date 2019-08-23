@@ -19,9 +19,6 @@ from data import (ChannelExistsError, MaxChannelCreatedError, UserExistsError,
                   get_md5, get_messages, get_users, send_message)
 from flask_session import Session
 
-# SQLALCHEMY_DATABASE_URI = os.environ.get(
-#     'DATABASE_URL') or 'sqlite:///' + os.path.join(os.getcwd(), 'flack.db')
-
 SQLALCHEMY_DATABASE_URI = os.environ.get(
     'DATABASE_URL') or 'sqlite:///' + os.path.join(os.getcwd(), 'flack.db')
 
@@ -36,11 +33,8 @@ Session(app)
 bcrypt = Bcrypt(app)
 
 # Set up database
-# engine = create_engine('sqlite:///'+os.path.join(os.getcwd(), "flack.db"))
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 db = scoped_session(sessionmaker(bind=engine))
-p = db.execute('Select * from user;').fetchone()
-print(p)
 
 # def convert(lst): return ({item[1]: item[0] for item in lst})
 
@@ -52,7 +46,6 @@ def convert(list_of_tuples): return [list(elem) for elem in list_of_tuples]
 def index_page():
     if session.get('logged_in') == True:
         return redirect(url_for('chat_page'))
-    # return render_template("index.html")
     return redirect(url_for('login_page'))
 
 
