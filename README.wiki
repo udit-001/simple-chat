@@ -1,5 +1,5 @@
 = Simple Chat = 
-An online messaging platform similar in spirit to Slack made using Flask.
+An online messaging platform similar in spirit to Slack made using Flask, available [https://trollegle.herokuapp.com/ here.]
 
 __TOC__
 
