@@ -26,6 +26,9 @@ A Chat app
 |Dark Side
 |}
 
+<br />
+<br />
+
 {|
 !colspan="3"|Exciting Features
 |-
@@ -37,3 +40,18 @@ A Chat app
 |Emoji Picker
 |File Attachments
 |}
+
+<br />
+<br />
+
+{|
+!colspan="2"|Conversation Modes
+|-
+|[[File:screenshots/chat-screen__dark-typing.png|options|Public Channels]]
+|[[File:screenshots/chat-screen__private.png|options|Private Messages]]
+|-
+|Public Channels
+|Private Messages
+|}
+
+
