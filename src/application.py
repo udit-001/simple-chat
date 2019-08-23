@@ -13,6 +13,7 @@ from flask_bcrypt import Bcrypt
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy_utils import create_database, database_exists
 
 from data import (ChannelExistsError, MaxChannelCreatedError, UserExistsError,
                   add_channel, add_user, connect, disconnect, get_channels,
@@ -32,9 +33,22 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 bcrypt = Bcrypt(app)
 
+# Create database file if not exists
+flag = 0
+if not database_exists(SQLALCHEMY_DATABASE_URI):
+    print('Database file not found, creating database...')
+    create_database(SQLALCHEMY_DATABASE_URI)
+    flag = 1
+
 # Set up database
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 db = scoped_session(sessionmaker(bind=engine))
+
+if flag == 1:
+db.execute('CREATE TABLE user(user_id INTEGER PRIMARY KEY, username TEXT UNIQUE, md5 TEXT, no_of_channels INTEGER, password TEXT, CHECK(no_of_channels >= 0 AND no_of_channels <= 1));')
+db.execute('CREATE TABLE channel(channel_id integer PRIMARY KEY, channel_name text, owner_id integer, FOREIGN KEY (owner_id) REFERENCES user (user_id));')
+db.execute('CREATE TABLE message(message_id integer PRIMARY KEY, message_content text NOT NULL, timestamp integer, channel_id integer, sender_id integer, file numeric default 0, file_name text default null, FOREIGN KEY (channel_id) REFERENCES channel (channel_id), FOREIGN KEY (sender_id) REFERENCES user (user_id));')
+    del flag
 
 # def convert(lst): return ({item[1]: item[0] for item in lst})
 
