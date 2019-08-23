@@ -47,8 +47,6 @@ def add_user(conn, username, password):
         data = conn.execute(
             "select * from user where username=:username", {"username": username}).fetchone()
         if data is not None:
-            # print(
-                # 'User with the username {0} already exists, try again!'.format(username))
             raise UserExistsError(
                 'User with the username {0} already exists, try again!'.format(username))
         else:
@@ -150,7 +148,6 @@ def send_message(conn, message_content, timestamp, channel_id, sender_id, is_fil
         print("{0} sent {1} in channel with id {2} at {3}".format(
             sender_id, message_content, channel_id, timestamp))
     except Exception as e:
-        # print("Message couldn't be sent because {0}.".format(e))
         # raise will pass the exception to the calling function
         raise
 
@@ -163,7 +160,6 @@ def get_users(conn, user):
     result = conn.execute(
         "select * from(select channel_id, channel_name from channel where owner_id IS NULL) where channel_name LIKE :user;", {'user': '%'+user+'%'}).fetchall()
     print(result)
-    # print(g(result))
     return result
 
 
@@ -175,30 +171,12 @@ def get_channels(conn):
 
 
 def get_messages(conn, channel_id):
-    # print('get_messages() called...')
     result = conn.execute(
         'select m.message_id, m.message_content, m.timestamp, m.channel_id, u.username, u.md5, m.file, m.file_name from message as m inner join user as u on m.sender_id = u.user_id where m.channel_id = :channel_id order by m.timestamp;', {'channel_id': channel_id}).fetchall()
     return result
 
 
 def get_md5(conn, username):
-    print('get_md5 called...')
     result = conn.execute('select md5 from user where username=:username;', {
                           'username': username}).fetchone()
     return result[0]
-
-
-if __name__ == "__main__":
-    conn = sqlite3.connect('flack.db')
-    # get_channels()
-    # convert utc time into timestamp for tests using the following:
-    time = calendar.timegm(datetime.utcnow().utctimetuple())
-    # add_channel(2121, 'haha')
-    # send_message('hi', time, 784905038022, 230438536170)
-    # send_message('hi', time, 784905038022, 971539203537)
-    # send_message('this is me wiz khalifa', time, 614549225300, 478567637577)
-    # send_message('i am good', time, 784905038022, 971539203537)
-    # add_user('John')
-    pprint(get_messages(614549225300))
-    # print(get_md5('Mary'))
-    # add_user('Mary')
