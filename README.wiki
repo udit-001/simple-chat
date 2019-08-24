@@ -1,5 +1,6 @@
 = Simple Chat =
-[[File:https://img.shields.io/website/https/trollegle.herokuapp.com?down_color=lightgrey&down_message=offline&style=flat&up_color=blue&up_message=online|options|Website Status]] <br />
+[[File:https://img.shields.io/website/https/trollegle.herokuapp.com?down_color=lightgrey&down_message=offline&style=flat-square&up_color=blue&up_message=online|options|Website Status]]
+[[File:http://hits.dwyl.io/udit-001/simple-chat.svg|Hit Count]]<br />
 An online messaging platform similar in spirit to Slack made using Flask, available [https://trollegle.herokuapp.com/ here.]
 
 __TOC__
