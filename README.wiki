@@ -13,15 +13,15 @@ Install the required dependencies/libraries by running :
   <nowiki>python application.py</nowiki>
 
 == Features ==
-* '''User Authentication''' : Allows users to sign up on the platform and login later to view older messages.
-* '''Dark Theme/ Light Theme''' : The app also comes in dark theme, for the ones who prefer the dark side.
-* '''Group Conversation''' : Allows multiple people to chat with each other in public channels.
-* '''Channel Creation''' : You can create channels to have conversations about different topics in a well organized manner.
-* '''Private Conversations''' : And for all your personal stuff, we've got private messages so that you can share your secrets without anyone knowing about it.
-* '''File Attachments''' : Sometimes you may need to share important work documents with each other or your cute dog photos.
-* '''Emoji Picker''' : It gets boring with only text, so we also let you express yourself using emojis with built-in emoji picker.
-* '''Typing Indicator''' : So that you can get instant feedback if your friend is typing a message before they finally send it.
-* '''Mobile Friendly''' : You can even talk to your friends on the move on your phone, since the site is mobile friendly.
+* '''👤 User Authentication''' : Allows users to sign up on the platform and login later to view older messages.
+* '''🌗 Dark Theme/ Light Theme''' : The app also comes in dark theme, for the ones who prefer the dark side.
+* '''👥 Group Conversation''' : Allows multiple people to chat with each other in public channels.
+* '''#️⃣ Channel Creation''' : You can create channels to have conversations about different topics in a well organized manner.
+* '''🔒 Private Conversations''' : And for all your personal stuff, we've got private messages so that you can share your secrets without anyone knowing about it.
+* '''📎 File Attachments''' : Sometimes you may need to share important work documents with each other or your cute dog photos.
+* '''🙂 Emoji Picker''' : It gets boring with only text, so we also let you express yourself using emojis with built-in emoji picker.
+* '''💬 Typing Indicator''' : So that you can get instant feedback if your friend is typing a message before they finally send it.
+* '''📱 Mobile Friendly''' : You can even talk to your friends on the move on your phone, since the site is mobile friendly.
 
 <br />
 
@@ -64,8 +64,8 @@ Install the required dependencies/libraries by running :
 |[[File:screenshots/chat-screen__light-typing.png|options|Light Theme]]
 |[[File:screenshots/chat-screen__dark-typing.png|options|Dark Theme]]
 |-
-|Light Side
-|Dark Side
+|🌝 Light Side
+|🌚 Dark Side
 |}
 
 <br />
@@ -80,7 +80,7 @@ Install the required dependencies/libraries by running :
 |-
 |Sidebar
 |Emoji Picker
-|File Attachments
+|📎 File Attachments
 |}
 
 <br />
@@ -92,8 +92,8 @@ Install the required dependencies/libraries by running :
 |[[File:screenshots/chat-screen__dark-typing.png|options|Public Channels]]
 |[[File:screenshots/chat-screen__private.png|options|Private Messages]]
 |-
-|Public Channels
-|Private Messages
+| Public Channels #️⃣
+| Private Messages 🔒
 |}
 
 
